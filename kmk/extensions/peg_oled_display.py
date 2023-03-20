@@ -1,16 +1,11 @@
 import busio
 import gc	
-
-
 import adafruit_displayio_ssd1306
 import displayio
 import terminalio
 from adafruit_display_text import label
 from kmk.kmktime import ticks_diff, ticks_ms
-
 from kmk.extensions import Extension
-
-
 
 
 class Oled(Extension):
@@ -54,6 +49,7 @@ class Oled(Extension):
             native_frames_per_second=60
         )
         self._display.show(self.group)
+        self._checkpoint = ticks_ms()
         return
 
     def before_matrix_scan(self, sandbox):
