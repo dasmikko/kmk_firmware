@@ -19,7 +19,7 @@ class Oled(Extension):
         group,
         oWidth=128,
         oHeight=64,
-        timeout=2000
+        timeout=2000,
         flip: bool = False,
     ):
         displayio.release_displays()
